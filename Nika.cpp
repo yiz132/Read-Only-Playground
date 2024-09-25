@@ -231,7 +231,7 @@ int main(int argc, char* argv[]) {
 
             if (configLoader->SENSE_VERBOSE > 1) overlayWindow.Render(&renderUI);
             processingTime = static_cast<int>(util::currentEpochMillis() - startTime);
-            int goalSleepTime = 16.67; // 16.67ms=60Hz | 6.94ms=144Hz
+            int goalSleepTime = 1000/165; // 16.67ms=60Hz | 6.94ms=144Hz
             int timeLeftToSleep = std::max(0, goalSleepTime - processingTime);
             util::sleep(timeLeftToSleep);
             if (counter % 100 == 0) {
