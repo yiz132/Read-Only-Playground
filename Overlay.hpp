@@ -71,6 +71,7 @@ public:
         glfwWindowHint(GLFW_MOUSE_PASSTHROUGH, GLFW_TRUE);
         glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);
         glfwWindowHint(GLFW_REFRESH_RATE, GLFW_DONT_CARE);
+        glfwWindowHint(GLFW_DOUBLEBUFFER, GLFW_TRUE);
 
         overlayWindow = glfwCreateWindow(screenWidth, screenHeight, overlayTitle, nullptr, nullptr);
 
@@ -82,7 +83,7 @@ public:
         InitializeUI();
 
         glfwShowWindow(overlayWindow);
-        glfwSwapInterval(0);
+        glfwSwapInterval(1);
 
         return true;
     }
