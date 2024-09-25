@@ -195,13 +195,14 @@ struct AimBot {
         else
             totalSmooth = cl->AIMBOT_SMOOTH * 10;
         float bulletSpeed = lp->weaponProjectileSpeed;
-        if (!lp->inZoom)
+
+        if (!currentTarget->isDrone && (!leftLock || cl->AIMBOT_SPECTATORS_WEAKEN && totalSpectators > 0) && !myDisplay -> isKeyDown(cl->AIMBOT_ACTIVATION_KEY)) {
+            totalSmooth *= 3*(cl->AIMBOT_WEAKEN);
+            bulletSpeed /= cl->AIMBOT_WEAKEN;
+        }
+        else if (!lp->inZoom) {
             totalSmooth *= cl->AIMBOT_WEAKEN;
-        else
-            if (!currentTarget->isDrone && (!leftLock || cl->AIMBOT_SPECTATORS_WEAKEN && totalSpectators > 0)) {
-                totalSmooth *= (cl->AIMBOT_WEAKEN + 1) / 2;
-                bulletSpeed /= cl->AIMBOT_WEAKEN;
-            }
+        }
 
         Vector2D aimbotDelta = desiredAnglesIncrement.Multiply(cl->AIMBOT_SPEED).Divide(totalSmooth);
         double aimYawIncrement = -aimbotDelta.y;
