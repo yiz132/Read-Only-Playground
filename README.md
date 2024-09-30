@@ -23,9 +23,10 @@
 * [x] Map radar (overlay based)
 * [x] Spectators list (overlay or CLI based)
 * [x] Added _AIMBOT_ZOOMED_MAX_MOVE_ / _AIMBOT_HIPFIRE_MAX_MOVE_ / _AIMBOT_MAX_DELTA_ to limit mouse speed
-* [x] Hold SHIFT to **lock on target** and **triggerbot** auto fire, or to **super glide**
+* [x] Hold SHIFT to **lock on target** and **triggerbot** auto fire
+* [x] Hold CAPS_LOCK to **super glide**
 * [x] Increase/decrease **aimbot** strength with CURSOR_LEFT; "**<**" symbol in the upper left corner of the screen
-* [x] Toggle **ADS locking** with CURSOR_RIGHT; "**>**" symbol in the upper left corner of the screen
+* [x] Toggle **non-player targeting** (drones + dummies) with CURSOR_RIGHT; "**>**" symbol in the upper left corner of the screen
 * [x] Disable/enable **triggerbot** auto fire with CURSOR_UP; "**^**" symbol in the upper left corner of the screen
 - **Bind X in-game to fire, triggerbot will use that key** (default AIMBOT_FIRING_KEY)
 - **Unbind LMB (Left Mouse Button) in-game from fire, so that the cheat will fire for you instead** (AIMBOT_ACTIVATED_BY_MOUSE default YES)
@@ -139,6 +140,7 @@ cd /root
 
 - Set to "**Borderless Window**" in-game, press ESC >> Settings >> Video >> Display Mode
 - For KDE desktop environment (Wayland), open System Settings >> Window Management >> Window Rules >> Import... >> glfw.kwinrule
+    - Also check in System Settings >> Display & Monitor >> Scale: 100%
 - For Xfce desktop environment (X11), go to Settings >> Window Manager Tweaks >> Accessibility >> Key used to grab and move windows: None
 
 ### 8. Update
